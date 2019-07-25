@@ -1,4 +1,4 @@
-package sample;
+package com.jacro.freecell;
 
 public class Controller {
 }
