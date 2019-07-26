@@ -38,4 +38,10 @@ public class Board {
     public void setDeck(Deck deck) {
         this.deck = deck;
     }
+
+    public boolean isMoveAllowed(Card cardUp, Card cardDown) {
+        if(cardUp.getSiut().getColor() == cardDown.getSiut().getColor()) return false;
+        if(cardDown.getRank().getValue() - cardUp.getRank().getValue() != 1) return false;
+        return true;
+    }
 }

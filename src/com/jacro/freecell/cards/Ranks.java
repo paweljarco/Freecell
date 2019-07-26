@@ -15,13 +15,13 @@ public enum Ranks {
     queen(12),
     king(13);
 
-    private int num;
+    private int value;
 
-    Ranks(int num) {
-        this.num = num;
+    Ranks(int value) {
+        this.value = value;
     }
 
     public int getValue(){
-        return num;
+        return value;
     }
 }
