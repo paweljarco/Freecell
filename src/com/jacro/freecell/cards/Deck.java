@@ -5,34 +5,39 @@ import java.util.Collections;
 import java.util.List;
 
 public class Deck {
-    private List<Card> card_deck;
+    private List<Card> cardDeck;
 
     public Deck() {
-        this.card_deck = new ArrayList();
+        this.cardDeck = new ArrayList();
         for (Siuts s: Siuts.values()) {
             for (Ranks r : Ranks.values()) {
-                card_deck.add(new Card(r,s));
+                cardDeck.add(new Card(r,s));
             }
         }
+        shuffle();
     }
 
     public void shuffle(){
         for (int i = 0; i < 10; i++) {
-            Collections.shuffle(card_deck);
+            Collections.shuffle(cardDeck);
         }
     }
 
     public Card deal(){
-        if (card_deck.isEmpty()) return null;
-        Card card = card_deck.get(0);
-        card_deck.remove(0);
+        if (cardDeck.isEmpty()) return null;
+        Card card = cardDeck.get(0);
+        cardDeck.remove(0);
         return card;
 
     }
 
     public void showCards() {
-        for (Card c: card_deck){
+        for (Card c: cardDeck){
             System.out.println(c);
         }
+    }
+
+    public boolean isDeckEmpty(){
+        return cardDeck.isEmpty();
     }
 }

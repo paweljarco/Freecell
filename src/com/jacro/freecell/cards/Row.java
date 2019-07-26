@@ -25,4 +25,21 @@ public class Row {
         return stack.pop();
     }
 
+    public boolean isRowInOrder(){
+        int test = Ranks.king.getValue();
+        for (Card c : stack) {
+            if (test < c.getRank().getValue()) return false;
+            else test = c.getRank().getValue();
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        String s = "";
+        for (Card c : stack) {
+            s += c.toString() + "\n";
+        }
+        return s;
+    }
 }
